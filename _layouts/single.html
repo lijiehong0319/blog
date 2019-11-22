@@ -49,12 +49,12 @@ layout: header
 					<div class="single-thumb">
 						<img src="{{site.baseurl}}{{page.amg}}" alt="">
 					</div>
-				
-				
+
+
                     <p>{{page.excerpt}}</p>
                     <p>{{page.date|date_to_long_string}}</p>
                     <span>{{page.day}}</span><br>
-				
+
 			</div>
 			<div class="svg-container single-post-svg single-svg-bottom svg-block">
 				<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1920 150">
@@ -65,15 +65,21 @@ layout: header
 				</svg>
 			</div>
            <div class="clearfix">
-          
+
           {% if page.next %}
-            <a class="btn btn-primary float-right" href="{{site.baseurl}}/{{page.next.url}}">上一篇： {{page.next.title}}</a>
+            <a class="btn btn-primary float-left" href="{{site.baseurl}}/{{page.next.url}}">上一篇： {{page.next.title}}</a>
+          {% else %}
+          			<button class="btn" disabled>没有上一篇</button>
           {% endif %}
+
+
           {% if page.previous %}
-            <a class="btn btn-primary float-left" href="{{site.baseurl}}/{{page.previous.url}}">下一篇： {{page.previous.title}}</a>
+            <a class="btn btn-primary float-right" href="{{site.baseurl}}/{{page.previous.url}}">下一篇： {{page.previous.title}}</a>
+             {% else %}
+          			<button class="btn float-left" disabled>没有下一篇</button>
           {% endif %}
+
         </div>
         </div>
 		</article>
 
-	
